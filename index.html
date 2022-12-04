@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Teste</title>
+</head>
+<body class="body">
+    <h1 class="texto">Fundo 1</h1>
+
+    <div class="relogio">
+        <span class="horas">00</span>
+        :
+        <span class="minutos">00</span>
+        :
+        <span class="segundos">00</span>
+    </div>
+
+
+    <div>
+     <button class="back1" onclick="muda()"></button>
+    <button class="back2" onclick="muda()"></button>
+    <button class="back3" onclick="muda()"></button>
+    <button class="back4" onclick="muda()"></button>
+    </div>
+
+    <script defer>
+
+            const fundo1 = document.querySelector('.back1');
+            const fundo2 = document.querySelector('.back2');
+            const fundo3 = document.querySelector('.back3');
+            const fundo4 = document.querySelector('.back4');
+
+            const texto = document.querySelector('.texto');
+
+            const hrs = document.querySelector('.horas');
+            const minutos = document.querySelector('.minutos');
+            const segundos = document.querySelector('.segundos');
+
+            const relogio = setInterval(function time(){
+             
+                
+                let dateToday = new Date();
+
+                let hr = dateToday.getHours();
+                let min = dateToday.getMinutes();
+                let seg = dateToday.getSeconds();
+
+                if(hr < 10) hr = '0' + hr;  
+                if(min < 10) min = '0' + min;
+                if(seg < 10) seg = '0' + seg;
+
+                hrs.textContent = hr;
+                minutos.textContent = min;
+                segundos.textContent = seg;
+
+                
+            })
+
+        function muda(){
+            fundo1.addEventListener('click', ()=> {
+                const corpo = document.querySelector('.body').style.backgroundImage = 'url(./img/back.png)';
+                texto.textContent = 'Fundo 1';
+            })
+
+            fundo2.addEventListener('click', ()=> {
+                const corpo = document.querySelector('.body').style.backgroundImage = 'url(./img/back1.png)';
+                texto.textContent = 'Fundo 2'
+            })
+
+            fundo3.addEventListener('click', ()=> {
+                const corpo = document.querySelector('.body').style.backgroundImage = 'url(./img/back2.png)';
+                texto.textContent = 'Fundo 3'
+            })
+
+            fundo4.addEventListener('click', ()=> {
+                const corpo = document.querySelector('.body').style.backgroundImage = 'url(./img/back3.png)';
+                texto.textContent = 'Fundo 4'
+            })
+        }
+
+    </script>
+</body>
+</html>

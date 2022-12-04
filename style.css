@@ -1,0 +1,51 @@
+body{
+    background-image: url(./img/back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h1{
+    color: white;
+    margin-bottom: 50px;
+    text-decoration: underline;
+}
+.relogio{
+    font-size: 79px;
+    margin-bottom: 50px;
+    animation: colors 60s ease infinite;
+}
+span{
+    border: 3px solid white;
+    padding: 20px 5px;
+    border-radius: 10px;
+}
+button{
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: 0.3;
+}
+button:hover{
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+@keyframes colors {
+    0%{
+        color: white;  
+    }
+    
+    50%{
+       color: black;
+    }
+    100%{
+        color: white;
+    }
+}
